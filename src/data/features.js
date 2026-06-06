@@ -19,6 +19,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_MOCK_INTERVIEW_VOICEFLOW_URL",
     placeholder: "e.g. I want to practice for Google SWE interview...",
     badge: "Most Popular",
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
   {
     id: "resume-review",
@@ -34,6 +35,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_RESUME_REVIEW_VOICEFLOW_URL",
     placeholder: "Paste your resume here or describe what you'd like reviewed...",
     badge: null,
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
   {
     id: "ats-scoring",
@@ -49,6 +51,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_ATS_SCORING_VOICEFLOW_URL",
     placeholder: "Paste your resume for ATS scoring...",
     badge: "New",
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
   {
     id: "career-path",
@@ -64,6 +67,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_CAREER_PATH_VOICEFLOW_URL",
     placeholder: "Tell me about your degree, year, and career interests...",
     badge: null,
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
   {
     id: "english-coach",
@@ -79,6 +83,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_ENGLISH_COACH_VOICEFLOW_URL",
     placeholder: "Start with a sentence to correct or ask for today's exercise...",
     badge: null,
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
   {
     id: "company-prep",
@@ -94,6 +99,7 @@ export const FEATURES = [
     voiceflowUrl: "YOUR_COMPANY_PREP_VOICEFLOW_URL",
     placeholder: "Which company are you preparing for?",
     badge: null,
+    udifyUrl: "https://udify.app/chatbot/GEKYpAzvmwOuDRaU",
   },
 ];
 

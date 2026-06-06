@@ -64,21 +64,38 @@ export default function ChatWindow({ feature, onBack }) {
         )}
       </div>
 
-      {/* Messages */}
-      <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "16px 0" : "24px 0", background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d1a 100%)" }}>
-        <div style={{ maxWidth: 780, margin: "0 auto", padding: isMobile ? "0 14px" : "0 24px" }}>
-          {messages.map((msg) => <MessageBubble key={msg.id} message={msg} feature={feature} isMobile={isMobile} />)}
-          {loading && (
-            <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 14 }}>
-              <div style={{ width: 30, height: 30, borderRadius: "50%", background: feature.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, marginRight: 8, marginTop: 2 }}>{feature.icon}</div>
-              <TypingIndicator accent={feature.accent} />
-            </div>
-          )}
-          <div ref={bottomRef} />
+      {/* If a udifyUrl is configured for the feature, embed it in an iframe. Otherwise render the existing chat messages + input. */}
+      {feature.udifyUrl ? (
+        <div style={{ flex: 1, overflow: "hidden", padding: isMobile ? "16px 0" : "24px 0", background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d1a 100%)" }}>
+          <div style={{ maxWidth: 1200, margin: "0 auto", padding: isMobile ? "0 14px" : "0 24px", height: "100%" }}>
+            <iframe
+              src={feature.udifyUrl}
+              title={feature.title}
+              style={{ width: "100%", height: "100%", minHeight: 700, border: "0" }}
+              frameBorder="0"
+              allow="microphone"
+            />
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          {/* Messages */}
+          <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "16px 0" : "24px 0", background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d1a 100%)" }}>
+            <div style={{ maxWidth: 780, margin: "0 auto", padding: isMobile ? "0 14px" : "0 24px" }}>
+              {messages.map((msg) => <MessageBubble key={msg.id} message={msg} feature={feature} isMobile={isMobile} />)}
+              {loading && (
+                <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 14 }}>
+                  <div style={{ width: 30, height: 30, borderRadius: "50%", background: feature.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, marginRight: 8, marginTop: 2 }}>{feature.icon}</div>
+                  <TypingIndicator accent={feature.accent} />
+                </div>
+              )}
+              <div ref={bottomRef} />
+            </div>
+          </div>
 
-      <ChatInput value={input} onChange={(e) => setInput(e.target.value)} onSend={sendMessage} loading={loading} feature={feature} isMobile={isMobile} />
+          <ChatInput value={input} onChange={(e) => setInput(e.target.value)} onSend={sendMessage} loading={loading} feature={feature} isMobile={isMobile} />
+        </>
+      )}
     </div>
   );
 }
