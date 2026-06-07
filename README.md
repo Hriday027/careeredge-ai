@@ -13,7 +13,7 @@ careeredge-ai/
 ├── src/
 │   ├── data/
 │   │   ├── features.js          # All 6 AI tool configs (Voiceflow URLs, colors, etc.)
-│   │   ├── stats.js             # Hero stats (50K+ students, etc.)
+│   │   ├── stats.js             # Hero stats (50+ students, etc.)
 │   │   └── howSteps.js          # How It Works step content
 │   │
 │   ├── hooks/

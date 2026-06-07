@@ -1,6 +1,6 @@
 // Hero section stats row
 export const STATS = [
-  { value: "50K+", label: "Students Placed" },
+  { value: "50", label: "Students Placed" },
   { value: "200+", label: "Companies Covered" },
   { value: "95%", label: "Interview Success Rate" },
   { value: "6", label: "AI-Powered Tools" },
